@@ -3,6 +3,7 @@
     "name": "expo-fromValid",
     "slug": "expo-fromValid",
     "version": "1.0.0",
+     "scheme": "expo-fromValid",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -22,7 +23,11 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
