@@ -4,6 +4,7 @@ import "../global.css";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
+import { Entypo } from "@expo/vector-icons";
 
 const schema = yup.object().shape({
   userName: yup.string().required("Name is required"),
@@ -130,7 +131,11 @@ const RegisterForm = () => {
                 className="absolute top-[1.8rem] right-[1rem]"
                 onPress={() => setShowPassword(!showPassword)}
               >
-                <Text>{showPassword ? "Hide" : "Show"}</Text>
+                {showPassword ? (
+                  <Entypo name="eye" size={20} />
+                ) : (
+                  <Entypo name="eye-with-line" size={20} />
+                )}
               </TouchableOpacity>
             </View>
             {errors.password && (
@@ -168,7 +173,11 @@ const RegisterForm = () => {
                 className="absolute top-[1.8rem] right-[1rem]"
                 onPress={() => setShowConPassword(!showConPassword)}
               >
-                <Text>{showConPassword ? "Hide" : "Show"}</Text>
+                {showConPassword ? (
+                  <Entypo name="eye" size={20} />
+                ) : (
+                  <Entypo name="eye-with-line" size={20} />
+                )}
               </TouchableOpacity>
             </View>
             {errors.confirmPassword && (
